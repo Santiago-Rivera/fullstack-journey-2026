@@ -1,13 +1,10 @@
-const { readFile } = require("fs");
-const { promisify } = require("util");
-
-const readFilePromise = promisify(readFile);
+const { readFile } = require("fs/promises");
 
 async function read() {
   try {
-    const result = await readFilePromise("./data/first.txt", "utf8");
+    const result = await readFile("./data/first.txt", "utf8");
     console.log(result);
-    const result2 = await readFilePromise("./data/second.txt", "utf8");
+    const result2 = await readFile("./data/second.txt", "utf8");
     console.log(result2);
   } catch (err) {
     console.log(err);
