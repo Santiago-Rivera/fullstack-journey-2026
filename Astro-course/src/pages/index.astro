@@ -1,0 +1,15 @@
+---
+import Layout from "../components/layout.astro";
+import Button from "../components/buttonSubcribe.jsx";
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+---
+
+<Layout pageTitle="Home Page", pageDescription="Pagina inicial">  <h1>Pagina inicial</h1>
+  <p>Esta es la pagina inicial</p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quasi fuga eius molestias tempora adipisci officia inventore commodi. Explicabo aut cupiditate incidunt a pariatur ab animi et numquam magni placeat.
+  </p>
+  <Button client:load />
+  <ToastContainer client:load />
+</Layout>

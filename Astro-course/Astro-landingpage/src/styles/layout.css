@@ -1,0 +1,11 @@
+body {
+    background: #202020;
+    color: whitesmoke;
+}
+
+/* Corrige el conflicto vertical-align con display: block de Tailwind */
+@layer base {
+    img, svg, video, canvas, audio, iframe, embed, object {
+        vertical-align: unset;
+    }
+}

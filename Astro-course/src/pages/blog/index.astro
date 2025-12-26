@@ -1,0 +1,38 @@
+---
+import Layout from "../../components/layout.astro";
+const posts = await Astro.glob("./posts/*.md");
+---
+
+<Layout
+  pageTitle="Blog de Desarrollado"
+  pageDescription="Tutoriales de desarrollo y programación"
+>
+  <h1>Blog</h1>
+
+  <img
+    src="https://images.pexels.com/photos/35116876/pexels-photo-35116876.jpeg?_gl=1*1wgsw61*_ga*NDYxMzA4NjU0LjE3NjY1OTY1OTI.*_ga_8JE65Q40S6*czE3NjY1OTY1OTEkbzEkZzEkdDE3NjY1OTY2MTQkajM3JGwwJGgw"
+    alt="500x500"
+    width="500"
+    height="500"
+  />
+
+  {
+    posts.map((post: any) => {
+      return (
+        <a href={post.url} class="link">
+          {post.frontmatter.title}
+        </a>
+      );
+    })
+  }
+
+  <style>
+    .link {
+      background: wheat;
+      color: black;
+      text-decoration: none;
+      display: block;
+      margin-button: 4px;
+    }
+  </style>
+</Layout>
